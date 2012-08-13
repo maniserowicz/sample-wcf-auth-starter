@@ -1,0 +1,14 @@
+﻿1)
+Create your public & private Keys
+(can leave password empty, select None):
+makecert -sv WcfAuthSampleKey.pvk -n "CN=ProcentWcfSample" WcfAuthSampleKey.cer -pe -sky exchange
+
+http://msdn.microsoft.com/en-us/library/dd434713.aspx
+
+2)
+Create PFX file from the public and private key
+pvk2pfx.exe -pvk WcfAuthSampleKey.pvk -spc WcfAuthSampleKey.cer -pfx WcfAuthSampleKey.pfx
+http://msdn.microsoft.com/en-us/library/dd434714.aspx
+
+3)
+Add the PFX file as an existing item to solution, set Build Action to Embedded Resource
